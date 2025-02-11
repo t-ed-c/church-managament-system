@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-<!-- Church Management System - Full Homepage -->
-
-<?php 
-session_start();
-include("connect.php");
-
-if (!isset($_SESSION['email'])) {
-    header("Location: index.php");
-    exit();
-}
-
-$email = mysqli_real_escape_string($conn, $_SESSION['email']);
-$query = mysqli_query($conn, "SELECT firstName, lastName FROM users WHERE email='$email'");
-$user = mysqli_fetch_assoc($query);
-$user_name = $user ? htmlspecialchars($user['firstName'] . ' ' . $user['lastName']) : 'User';
-=======
 <?php
 session_start();
 include("connect.php");
@@ -28,22 +11,17 @@ $user_id = $_SESSION['user_id'];
 $query = mysqli_query($conn, "SELECT firstName, lastName FROM users WHERE id='$user_id'");
 $user = mysqli_fetch_assoc($query);
 $user_name = $user ? $user['firstName'] . ' ' . $user['lastName'] : 'User';
->>>>>>> 107f618f9b2f28f4977a6f318ebebc7688fd4a68
 
 // Fetch a random memory verse
 $verse_query = mysqli_query($conn, "SELECT verse FROM memory_verses ORDER BY RAND() LIMIT 1");
 $verse = mysqli_fetch_assoc($verse_query)['verse'] ?? "No memory verse available.";
 ?>
-<<<<<<< HEAD
 
-=======
->>>>>>> 107f618f9b2f28f4977a6f318ebebc7688fd4a68
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>Homepage</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -87,6 +65,5 @@ $verse = mysqli_fetch_assoc($verse_query)['verse'] ?? "No memory verse available
         <a href="contact.php">Contact Us</a>
         <a href="logout.php">Logout</a>
     </nav>
->>>>>>> 107f618f9b2f28f4977a6f318ebebc7688fd4a68
 </body>
 </html>
