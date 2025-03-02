@@ -1,0 +1,138 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('church-background.jpg'); /* Add your church image here */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: rgba(44, 62, 80, 0.8); /* Semi-transparent background */
+    color: white;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav {
+    background: rgba(52, 73, 94, 0.8); /* Semi-transparent background */
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
+    text-decoration: underline;
+}
+
+/* Main Section */
+main {
+    padding: 50px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+}
+
+.welcome-container {
+    text-align: center;
+}
+
+.welcome-message {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.memory-verse {
+    font-size: 24px;
+    font-style: italic;
+    color: white;
+    background: rgba(22, 160, 133, 0.8); /* Semi-transparent background */
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.memory-verse:hover {
+    background: rgba(26, 188, 156, 0.8); /* Lighter shade for hover effect */
+}
+
+/* Footer */
+footer {
+    background: rgba(44, 62, 80, 0.8); /* Semi-transparent background */
+    color: white;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .welcome-message {
+        font-size: 40px;
+    }
+    .memory-verse {
+        font-size: 22px;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-message {
+        font-size: 30px;
+    }
+    .memory-verse {
+        font-size: 18px;
+        padding: 10px;
+    }
+    main {
+        padding: 20px;
+    }
+    nav ul li a {
+        font-size: 16px;
+    }
+}
