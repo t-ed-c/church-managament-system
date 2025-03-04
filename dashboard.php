@@ -8,68 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Custom CSS for the dashboard */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f9fafb;
-            margin: 0;
-            padding: 0;
-        }
-
-        .sidebar {
-            background-color: #1e293b;
-            color: #f8fafc;
-            height: 100vh;
-            transition: width 0.3s ease;
-            overflow-y: auto;
-        }
-
-        .sidebar a {
-            color: #cbd5e1;
-            transition: all 0.2s ease;
-        }
-
-        .sidebar a:hover {
-            background-color: #334155;
-            color: #f8fafc;
-        }
-
-        .sidebar-active {
-            background-color: #334155;
-            color: #f8fafc;
-        }
-
-        .card {
-            background-color: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-        }
-
-        .card:hover {
-            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-        }
-
-        .stats-card {
-            min-height: 120px;
-        }
-
-        .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #3498db;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 2s linear infinite;
-            margin: 20px auto;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="dashboard.js" ></script> 
+         
 </head>
 <body>
     <div class="flex h-screen overflow-hidden">
@@ -362,45 +303,5 @@
             </main>
         </div>
     </div>
-
-    <!-- JavaScript for interactive features -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Toggle sidebar functionality
-            const toggleSidebar = document.getElementById('toggleSidebar');
-            const sidebar = document.getElementById('sidebar');
-            let sidebarOpen = true;
-
-            toggleSidebar.addEventListener('click', function() {
-                if (sidebarOpen) {
-                    sidebar.classList.remove('w-64');
-                    sidebar.classList.add('w-20');
-                    
-                    // Hide text in sidebar links
-                    const sidebarText = document.querySelectorAll('#sidebar span');
-                    sidebarText.forEach(span => {
-                        span.style.display = 'none';
-                    });
-                    
-                    // Change icon
-                    toggleSidebar.innerHTML = '<i class="fas fa-chevron-right"></i>';
-                } else {
-                    sidebar.classList.remove('w-20');
-                    sidebar.classList.add('w-64');
-                    
-                    // Show text in sidebar links
-                    const sidebarText = document.querySelectorAll('#sidebar span');
-                    sidebarText.forEach(span => {
-                        span.style.display = 'inline';
-                    });
-                    
-                    // Change icon
-                    toggleSidebar.innerHTML = '<i class="fas fa-chevron-left"></i>';
-                }
-                
-                sidebarOpen = !sidebarOpen;
-            });
-        });
-    </script>
 </body>
 </html>
